@@ -1,9 +1,9 @@
 
 import About from '../components/About'
-import Carousel from '../components/Carousel'
+import CarouselContainer from '../components/CarouselContainer'
 import Footer from '../components/Footer'
 import Insta from '../components/Insta'
 import Nav from '../components/Nav'
 
 
-export { About, Carousel, Footer, Insta, Nav}
+export { About, CarouselContainer, Footer, Insta, Nav}

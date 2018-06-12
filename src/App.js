@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { About, Carousel, Footer, Insta, Nav } from './components'
+import { About, CarouselContainer, Footer, Insta, Nav } from './components'
 
 class App extends Component {
   render() {
     return (
       <div>
         <Nav />
-        <Carousel />
+    <CarouselContainer />
         <About />
         <Insta />
         <Footer />
