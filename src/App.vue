@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Katies Custom Cookies"/>
+    <HelloWorld msg="hello"/>
   </div>
 </template>
 
