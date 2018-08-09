@@ -15,7 +15,13 @@ export default class NavBar extends Component {
 		const { activeItem } = this.state
 		return (
 			<Menu pointing secondary>
-				<Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+
+				<Menu.Item
+					name='home'
+					active={activeItem === 'home'}
+					onClick={this.handleItemClick}
+					position={"right"}
+				/>
 				<Menu.Item
 					name='gallery'
 					active={activeItem === 'gallery'}

@@ -6,10 +6,11 @@ export default class HomeHeader extends Component {
 		return (
 			<Container>
 				<Header
+					className="header-msg"
 					as="h1"
 					textAlign={"center"}
 				>
-					Welcome
+					Welcome to Katies Custom Cookies
 				</Header>
 			</Container>
 		)

@@ -14,9 +14,6 @@ class App extends Component {
 					<HomeHeader />
 				</Segment>
 				<h1>
-					Parallax
-				</h1>
-				<h1>
 					Message
 				</h1>
 				<h1>

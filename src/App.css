@@ -4,6 +4,13 @@
 .home-head {
 	background: url('./images/cookie.jpg') no-repeat !important;
 	background-size: cover !important;
-	height: 1000px;
-	
+	height: 100vh;
+	/* background-attachment: fixed; */
+    background-position: center;
 }
+.header-msg {
+	position: relative;
+	top: 40vh;
+	color: #fff !important;
+	font-size: 3em !important;
+} 
