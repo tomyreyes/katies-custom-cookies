@@ -2,15 +2,15 @@
 	border-bottom: none !important;
 }
 .home-head {
-	background: url('./images/cookie.jpg') no-repeat !important;
-	background-size: cover !important;
+	background: url('./images/cookie.jpg') no-repeat ;
+	background-size: cover ;
 	height: 100vh;
-	background-attachment: fixed !important;
+	background-attachment: fixed ;
     background-position: center;
 }
 .header-msg {
 	position: relative;
 	top: 40vh;
-	color: #fff !important;
-	font-size: 3em !important;
+	color: #fff ;
+	font-size: 3em ;
 } 

@@ -8,12 +8,12 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Segment
+				<div
 					className="home-head"
 				>
 					<Navbar />
 					<HomeHeader />
-				</Segment>
+				</div>
 				<HomeMessage />
 				<h1>
 					About

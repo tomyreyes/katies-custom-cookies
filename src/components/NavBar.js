@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Segment } from 'semantic-ui-react'
+import { Menu, Responsive } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
 	constructor() {
@@ -11,11 +11,11 @@ export default class NavBar extends Component {
 
 	handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-	renderNavBar = () => {
+
+	renderDesktopNav = () => {
 		const { activeItem } = this.state
 		return (
 			<Menu pointing secondary>
-
 				<Menu.Item
 					name='home'
 					active={activeItem === 'home'}
@@ -25,6 +25,11 @@ export default class NavBar extends Component {
 				<Menu.Item
 					name='gallery'
 					active={activeItem === 'gallery'}
+					onClick={this.handleItemClick}
+				/>
+				<Menu.Item
+					name='prices'
+					active={activeItem === 'prices'}
 					onClick={this.handleItemClick}
 				/>
 				<Menu.Item
@@ -38,7 +43,12 @@ export default class NavBar extends Component {
 	render() {
 		return (
 			<nav>
-				{this.renderNavBar()}
+				<Responsive minWidth={768}>
+					{this.renderDesktopNav()}
+				</Responsive>
+				{/* <Responsive maxWith={767}>
+
+				</Responsive> */}
 			</nav>
 		)
 	}
