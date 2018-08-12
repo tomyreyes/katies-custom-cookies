@@ -1,3 +1,6 @@
+.App{
+	font-family: 'gt-walsheim-regular', sans-serif !important;
+}
 .menu {
 	border-bottom: none !important;
 }
@@ -6,11 +9,54 @@
 	background-size: cover ;
 	height: 100vh;
 	background-attachment: fixed ;
-    background-position: center;
+	background-position: center;
+	font-family: 'gt-walsheim-regular', sans-serif !important;
 }
 .header-msg {
 	position: relative;
 	top: 40vh;
 	color: #fff ;
-	font-size: 3em ;
+	font-size: 4rem !important;
+	font-family: 'gt-walsheim-regular', sans-serif !important;
+	
 } 
+
+.text-block {
+	text-align: center;
+	background-color: #FCF5EC;
+	padding: 10rem 0;
+}
+
+.text-block h2 {
+	font-size: 3rem;
+	font-family: 'gt-walsheim-regular', sans-serif !important;
+	
+}
+.text-block p {
+	font-size: 2.25rem;
+	margin-top: 2rem;
+	color: #808080;
+	font-family: 'gt-walsheim-regular', sans-serif !important;
+}
+.about {
+	display: flex;
+}
+
+.about img.ui.image {
+	height: 70rem; 
+	width:50vw;
+}
+.text-box{
+	text-align: center;
+	padding: 10rem 5rem ;
+	background-color: #BDDABC;
+	width:50vw;
+}
+.text-box h2 {
+	font-family: 'gt-walsheim-regular', sans-serif !important;
+	font-size: 3rem;
+}
+.text-box p {
+	font-family: 'gt-walsheim-regular', sans-serif !important;
+	font-size: 1.5rem;
+}

@@ -3,11 +3,11 @@ import './App.css';
 import Navbar from './components/NavBar'
 import HomeHeader from './components/HomeHeader'
 import HomeMessage from './components/HomeMessage'
-import { Segment } from 'semantic-ui-react'
+import About from './components/About'
 class App extends Component {
 	render() {
 		return (
-			<div>
+			<div className="App">
 				<div
 					className="home-head"
 				>
@@ -15,9 +15,7 @@ class App extends Component {
 					<HomeHeader />
 				</div>
 				<HomeMessage />
-				<h1>
-					About
-				</h1>
+				<About />
 				<h1>
 					Footer
 				</h1>
