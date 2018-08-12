@@ -1,42 +1,55 @@
 import React, { Component } from 'react'
-import { Menu, Responsive } from 'semantic-ui-react'
+import { Image, Menu, Responsive } from 'semantic-ui-react'
+import logo from '../images/katieslogo.png'
 
 export default class NavBar extends Component {
-	constructor() {
-		super()
-		this.state = {
-			activeItem: 'home'
-		}
-	}
-
-	handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-
 	renderDesktopNav = () => {
-		const { activeItem } = this.state
+		const { activeItem, handleItemClick } = this.props
 		return (
 			<Menu pointing secondary>
 				<Menu.Item
 					name='home'
 					active={activeItem === 'home'}
-					onClick={this.handleItemClick}
+					onClick={handleItemClick}
+				>
+					<Image src={logo} />
+				</Menu.Item>
+				<Menu.Item
+					name='home'
+					active={activeItem === 'home'}
+					onClick={handleItemClick}
 					position={"right"}
 				/>
 				<Menu.Item
 					name='gallery'
 					active={activeItem === 'gallery'}
-					onClick={this.handleItemClick}
+					onClick={handleItemClick}
 				/>
 				<Menu.Item
 					name='prices'
 					active={activeItem === 'prices'}
-					onClick={this.handleItemClick}
+					onClick={handleItemClick}
 				/>
 				<Menu.Item
 					name='contact'
 					active={activeItem === 'contact'}
-					onClick={this.handleItemClick}
+					onClick={handleItemClick}
 				/>
+			</Menu>
+		)
+	}
+
+	renderMobileNav = () => {
+		const { activeItem, handleItemClick } = this.props
+		return (
+			<Menu pointing secondary id="mobile-nav">
+				<Menu.Item
+					name='home'
+					active={activeItem === 'home'}
+					onClick={handleItemClick}
+				>
+					<Image src={logo} />
+				</Menu.Item>
 			</Menu>
 		)
 	}
@@ -46,9 +59,9 @@ export default class NavBar extends Component {
 				<Responsive minWidth={768}>
 					{this.renderDesktopNav()}
 				</Responsive>
-				{/* <Responsive maxWith={767}>
-
-				</Responsive> */}
+				<Responsive maxWidth={767}>
+					{this.renderMobileNav()}
+				</Responsive>
 			</nav>
 		)
 	}

@@ -10,7 +10,7 @@ export default class HomeHeader extends Component {
 					as="h1"
 					textAlign={"center"}
 				>
-					Welcome to Katies Custom Cookies
+					Katies Custom Cookies
 				</Header>
 			</Container>
 		)

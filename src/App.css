@@ -1,8 +1,29 @@
 .App{
 	font-family: 'gt-walsheim-regular', sans-serif !important;
 }
+/* nav{
+	background: rgba(21, 21, 21, 0.8);
+    padding: 1.25rem;
+} */
+
+nav img.ui.image{
+	height:6rem;
+}
+nav .ui.menu .item{
+	line-height: 4 !important;
+}
+.ui.secondary.pointing.menu .item{
+	border-bottom:none!important;
+}
 .menu {
 	border-bottom: none !important;
+}
+.ui.menu {
+    font-size: 1.25rem;
+}
+
+#mobile-nav{
+	justify-content: center;
 }
 .home-head {
 	background: url('./images/cookie.jpg') no-repeat ;
@@ -60,3 +81,17 @@
 	font-family: 'gt-walsheim-regular', sans-serif !important;
 	font-size: 1.5rem;
 }
+
+footer {
+	background-color: #272C30;
+	padding: 2rem;
+	justify-content: center!important;
+}
+footer .ui.menu .item {
+	color: white !important;
+}
+
+.footer-nav{
+	justify-content: center;
+}
+
