@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Image, Menu, Responsive } from 'semantic-ui-react'
+import { Button, Form, Header, Image, Menu, Modal, Responsive } from 'semantic-ui-react'
 import logo from '../images/katieslogo.png'
+import Contact from './Contact'
 
 export default class NavBar extends Component {
+
 	renderDesktopNav = () => {
 		const { activeItem, handleItemClick } = this.props
 		return (
@@ -30,11 +32,7 @@ export default class NavBar extends Component {
 					active={activeItem === 'prices'}
 					onClick={handleItemClick}
 				/>
-				<Menu.Item
-					name='contact'
-					active={activeItem === 'contact'}
-					onClick={handleItemClick}
-				/>
+				<Contact />
 			</Menu>
 		)
 	}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Icon, Responsive, Segment } from 'semantic-ui-react'
+import Contact from './Contact'
 
 
 export default class Footer extends Component {
@@ -24,11 +25,7 @@ export default class Footer extends Component {
 					active={activeItem === 'prices'}
 					onClick={handleItemClick}
 				/>
-				<Menu.Item
-					name='contact'
-					active={activeItem === 'contact'}
-					onClick={handleItemClick}
-				/>
+				<Contact />
 			</Menu>
 		)
 	}
@@ -62,14 +59,18 @@ export default class Footer extends Component {
 					<Icon name="dollar sign" />
 					Prices
 				</Menu.Item>
-				<Menu.Item
+				<Contact>
+					<Icon name="mail" />
+					Contact
+				</Contact>
+				{/* <Menu.Item
 					name='contact'
 					active={activeItem === 'contact'}
 					onClick={handleItemClick}
 				>
 					<Icon name="mail" />
 					Contact
-				</Menu.Item>
+				</Menu.Item> */}
 			</Menu>
 		)
 	}
