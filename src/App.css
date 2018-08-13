@@ -60,6 +60,8 @@ nav .ui.menu .item{
 	display: flex;
 }
 
+
+
 .about img.ui.image {
 	height: 70rem; 
 	width:50vw;
@@ -77,6 +79,17 @@ nav .ui.menu .item{
 .text-box p {
 	font-family: 'gt-walsheim-regular', sans-serif !important;
 	font-size: 1.5rem;
+}
+@media only screen and (max-width: 766px){
+	.about {
+		display: inline-block;
+	}
+	.about img.ui.image {
+		width:100%;
+	}	
+	.text-box{
+		width: 100%;
+	}
 }
 
 footer {
