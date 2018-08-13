@@ -72,7 +72,8 @@ export default class Contact extends Component {
 							<label>Message</label>
 							<textarea value={message} name="message" onChange={(e) => this.handleUserInput(e)} />
 						</Form.Field>
-						<Button color='blue' onClick={this.sendMessage}>Submit</Button>{formSuccess === true ? <span>Message Sent - Thank You</span> : ''}
+						<Button color='blue' onClick={this.sendMessage}>Submit</Button>{formSuccess === true ? <span> Message Sent - Thank You</span> : ''}
+						{formSuccess === false ? <span> Please Double Check Your Information</span> : ''}
 					</Form>
 				</Modal.Content>
 			</Modal>
