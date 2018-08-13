@@ -80,8 +80,8 @@ nav .ui.menu .item{
 }
 
 footer {
-	background-color: #272C30;
-	padding: 2rem;
+	/* background-color: #272C30;
+	padding: 2rem; */
 	justify-content: center!important;
 }
 footer .ui.menu .item {
@@ -89,7 +89,17 @@ footer .ui.menu .item {
 }
 
 .footer-nav{
+	background-color: #272C30 !important;
+	padding: 2rem;
 	justify-content: center;
+}
+
+.mobile-nav{
+	
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 

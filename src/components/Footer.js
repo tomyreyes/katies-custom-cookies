@@ -33,7 +33,7 @@ export default class Footer extends Component {
 	renderMobileFooter = () => {
 		const { activeItem, handleItemClick } = this.props
 		return (
-			<Menu icon='labeled' secondary className="footer-nav">
+			<Menu icon='labeled' secondary className="footer-nav mobile-nav">
 				<Menu.Item
 					name='home'
 					active={activeItem === 'home'}
@@ -59,18 +59,15 @@ export default class Footer extends Component {
 					<Icon name="dollar sign" />
 					Prices
 				</Menu.Item>
-				<Contact>
-					<Icon name="mail" />
-					Contact
-				</Contact>
-				{/* <Menu.Item
+
+				<Menu.Item
 					name='contact'
 					active={activeItem === 'contact'}
 					onClick={handleItemClick}
 				>
 					<Icon name="mail" />
 					Contact
-				</Menu.Item> */}
+				</Menu.Item>
 			</Menu>
 		)
 	}
