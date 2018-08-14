@@ -5,17 +5,41 @@ import HomeHeader from './components/HomeHeader'
 import HomeMessage from './components/HomeMessage'
 import About from './components/About'
 import Footer from './components/Footer'
+import MobileContact from './components/MobileContact';
+
 
 class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			activeItem: 'home'
+			activeItem: 'home',
+			openModal: false
 		}
 	}
-	handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+	handleItemClick = (e, { name }) => {
+		this.setState({ activeItem: name })
+		if (name === 'Contact') {
+			console.log('hi')
+			this.setState({
+				openModal: true
+			})
+		}
+	}
+
+	componentDidMount() {
+		document.body.addEventListener('click', this.closeModal);
+	}
+
+	closeModal = () => {
+		this.setState({
+			openModal: false
+		})
+	}
+
+
+
 	render() {
-		const { activeItem } = this.state
+		const { activeItem, openModal } = this.state
 		return (
 			<div className="App">
 				<div
@@ -26,7 +50,8 @@ class App extends Component {
 				</div>
 				<HomeMessage />
 				<About />
-				<Footer handleItemClick={this.handleItemClick} activeItem={activeItem} />
+				<MobileContact openModal={openModal} />
+				<Footer handleItemClick={this.handleItemClick} activeItem={activeItem} openModal={openModal} />
 			</div>
 		);
 	}

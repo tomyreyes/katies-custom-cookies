@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Menu, Icon, Responsive, Segment } from 'semantic-ui-react'
 import Contact from './Contact'
-
+import MobileContact from './MobileContact'
 
 export default class Footer extends Component {
 
@@ -45,10 +45,9 @@ export default class Footer extends Component {
 					<Icon name="cookie" />
 					Gallery
 				</Menu.Item>
-
 				<Menu.Item
-					name='contact'
-					active={activeItem === 'contact'}
+					name='Contact'
+					active={activeItem === 'Contact'}
 					onClick={handleItemClick}
 				>
 					<Icon name="mail" />
