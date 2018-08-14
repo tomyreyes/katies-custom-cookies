@@ -12,17 +12,11 @@ export default class Footer extends Component {
 				<Menu.Item
 					name='home'
 					active={activeItem === 'home'}
-					// position={"right"}
 					onClick={handleItemClick}
 				/>
 				<Menu.Item
-					name='gallery'
-					active={activeItem === 'gallery'}
-					onClick={handleItemClick}
-				/>
-				<Menu.Item
-					name='prices'
-					active={activeItem === 'prices'}
+					name='cookies'
+					active={activeItem === 'cookies'}
 					onClick={handleItemClick}
 				/>
 				<Contact />
@@ -44,20 +38,12 @@ export default class Footer extends Component {
 					Home
 				</Menu.Item>
 				<Menu.Item
-					name='gallery'
-					active={activeItem === 'gallery'}
+					name='cookies'
+					active={activeItem === 'cookies'}
 					onClick={handleItemClick}
 				>
-					<Icon name="camera" />
+					<Icon name="cookie" />
 					Gallery
-				</Menu.Item>
-				<Menu.Item
-					name='prices'
-					active={activeItem === 'prices'}
-					onClick={handleItemClick}
-				>
-					<Icon name="dollar sign" />
-					Prices
 				</Menu.Item>
 
 				<Menu.Item

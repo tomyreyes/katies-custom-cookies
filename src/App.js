@@ -5,6 +5,7 @@ import HomeHeader from './components/HomeHeader'
 import HomeMessage from './components/HomeMessage'
 import About from './components/About'
 import Footer from './components/Footer'
+
 class App extends Component {
 	constructor() {
 		super()

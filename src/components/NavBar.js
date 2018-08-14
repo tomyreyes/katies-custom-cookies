@@ -23,13 +23,8 @@ export default class NavBar extends Component {
 					position={"right"}
 				/>
 				<Menu.Item
-					name='gallery'
-					active={activeItem === 'gallery'}
-					onClick={handleItemClick}
-				/>
-				<Menu.Item
-					name='prices'
-					active={activeItem === 'prices'}
+					name='cookies'
+					active={activeItem === 'cookies'}
 					onClick={handleItemClick}
 				/>
 				<Contact />
