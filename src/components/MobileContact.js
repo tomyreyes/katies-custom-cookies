@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Header, Image, Menu, Modal, Responsive } from 'semantic-ui-react'
+import { Button, Form, Modal } from 'semantic-ui-react'
 
 export default class MobileContact extends Component {
 	constructor() {
@@ -50,7 +50,7 @@ export default class MobileContact extends Component {
 	}
 
 	render() {
-		const { name, email, phone, message, nameError, emailError, phoneError, messageError, formSuccess } = this.state
+		const { name, email, phone, message, nameError, emailError, messageError, formSuccess } = this.state
 		return (
 			<Modal open={this.props.openModal}>
 				<Modal.Header>Contact Me</Modal.Header>

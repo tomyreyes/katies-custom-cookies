@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Menu, Icon, Responsive, Segment } from 'semantic-ui-react'
+import { Menu, Icon, Responsive } from 'semantic-ui-react'
 import Contact from './Contact'
-import MobileContact from './MobileContact'
 
 export default class Footer extends Component {
 

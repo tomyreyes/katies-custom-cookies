@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Form, Header, Image, Menu, Modal, Responsive } from 'semantic-ui-react'
-
+import { Button, Form, Menu, Modal } from 'semantic-ui-react'
+import axios from 'axios'
 export default class Contact extends Component {
 	constructor() {
 		super()
@@ -12,7 +12,7 @@ export default class Contact extends Component {
 			nameError: false,
 			emailError: false,
 			messageError: false,
-			formSuccess: null
+			formSuccess: null,
 		}
 	}
 
@@ -20,8 +20,8 @@ export default class Contact extends Component {
 		const { name, value } = e.target
 		this.setState({ [name]: value })
 	}
-	sendMessage = () => {
-		const { name, email, message } = this.state
+	handleSubmit = () => {
+		const { name, email, message, phone } = this.state
 		let error = false
 		let emailValidation = email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
 		if (name === '') {
@@ -45,12 +45,24 @@ export default class Contact extends Component {
 		if (error) {
 			this.setState({ formSuccess: false })
 		} else {
+			axios.post('http://localhost:8080/send', {
+				name, email, phone, message
+			})
 			this.setState({ formSuccess: true })
 		}
 	}
+	// handleSubmit = async () => {
+	// 	const { name, email, phone, message, formSuccess } = this.state
+	// 	await this.checkUserInputs()
+	// 	if (formSuccess === true) {
+	// 		await axios.post('http://localhost:8080/send', {
+	// 			name, email, phone, message
+	// 		})
+	// 	}
+	// }
 
 	render() {
-		const { name, email, phone, message, nameError, emailError, phoneError, messageError, formSuccess } = this.state
+		const { name, email, phone, message, nameError, emailError, messageError, formSuccess } = this.state
 		return (
 			<Modal trigger={<Menu.Item name='contact' />}>
 				<Modal.Header>Contact Me</Modal.Header>
@@ -72,8 +84,9 @@ export default class Contact extends Component {
 							<label>Message</label>
 							<textarea value={message} name="message" onChange={(e) => this.handleUserInput(e)} />
 						</Form.Field>
-						<Button color='blue' onClick={this.sendMessage}>Submit</Button>{formSuccess === true ? <span> Message Sent - Thank You</span> : ''}
-						{formSuccess === false ? <span> Please Double Check YourInformation</span> : ''}
+						<Button color='blue' onClick={this.handleSubmit}>Submit</Button>
+						{formSuccess === true ? <span>Message Sent - Thank You</span> : ''}
+						{formSuccess === false ? <span> Please Double Check Your Information</span> : ''}
 					</Form>
 				</Modal.Content>
 			</Modal>
