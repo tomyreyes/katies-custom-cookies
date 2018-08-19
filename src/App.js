@@ -15,6 +15,7 @@ class App extends Component {
 			activeItem: 'home',
 			openModal: false
 		}
+		this.timeOutId = null;
 	}
 	handleItemClick = (e, { name }) => {
 		this.setState({ activeItem: name })
@@ -26,22 +27,26 @@ class App extends Component {
 		}
 	}
 
-	componentDidMount() {
-		document.body.addEventListener('click', this.closeModal);
+	onBlurHandler = () => {
+		this.timeOutId = setTimeout(() => {
+			this.setState({
+				openModal: false
+			});
+		});
 	}
 
-	closeModal = () => {
-		this.setState({
-			openModal: false
-		})
+	// If a child receives focus, do not close the popover.
+	onFocusHandler = () => {
+		clearTimeout(this.timeOutId);
 	}
-
-
 
 	render() {
 		const { activeItem, openModal } = this.state
 		return (
-			<div className="App">
+			<div className="App"
+				onBlur={this.onBlurHandler}
+				onFocus={this.onFocusHandler}
+			>
 				<div
 					className="home-head"
 				>

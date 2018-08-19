@@ -51,15 +51,6 @@ export default class Contact extends Component {
 			this.setState({ formSuccess: true })
 		}
 	}
-	// handleSubmit = async () => {
-	// 	const { name, email, phone, message, formSuccess } = this.state
-	// 	await this.checkUserInputs()
-	// 	if (formSuccess === true) {
-	// 		await axios.post('http://localhost:8080/send', {
-	// 			name, email, phone, message
-	// 		})
-	// 	}
-	// }
 
 	render() {
 		const { name, email, phone, message, nameError, emailError, messageError, formSuccess } = this.state
@@ -85,8 +76,8 @@ export default class Contact extends Component {
 							<textarea value={message} name="message" onChange={(e) => this.handleUserInput(e)} />
 						</Form.Field>
 						<Button color='blue' onClick={this.handleSubmit}>Submit</Button>
-						{formSuccess === true ? <span>Message Sent - Thank You</span> : ''}
-						{formSuccess === false ? <span> Please Double Check Your Information</span> : ''}
+						{formSuccess === true && <span>Message Sent - Thank You</span>}
+						{formSuccess === false && <span> Please Double Check Your Information</span>}
 					</Form>
 				</Modal.Content>
 			</Modal>
