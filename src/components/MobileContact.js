@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Button, Form, Modal } from 'semantic-ui-react'
 
 export default class MobileContact extends Component {
@@ -79,4 +80,8 @@ export default class MobileContact extends Component {
 			</Modal>
 		)
 	}
+}
+
+MobileContact.propTypes = {
+	openModal: PropTypes.bool.isRequired
 }

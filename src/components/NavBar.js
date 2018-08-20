@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Image, Menu, Responsive } from 'semantic-ui-react'
 import logo from '../images/katieslogo.png'
 import Contact from './Contact'
@@ -58,4 +59,9 @@ export default class NavBar extends Component {
 			</nav>
 		)
 	}
+}
+
+NavBar.propTypes = {
+	activeItem: PropTypes.string.isRequired,
+	handleItemClick: PropTypes.func.isRequired
 }

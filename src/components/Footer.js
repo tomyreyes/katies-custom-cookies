@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Menu, Icon, Responsive } from 'semantic-ui-react'
 import Contact from './Contact'
 
@@ -67,4 +68,10 @@ export default class Footer extends Component {
 			</footer>
 		)
 	}
+}
+
+Footer.propTypes = {
+	activeItem: PropTypes.string.isRequired,
+	handleItemClick: PropTypes.func.isRequired,
+	openModal: PropTypes.bool.isRequired
 }
