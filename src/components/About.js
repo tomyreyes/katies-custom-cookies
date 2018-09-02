@@ -1,6 +1,6 @@
-import React from 'react'
-import { Image } from 'semantic-ui-react'
-import Katie from '../images/placeholder.jpg'
+import React from 'react';
+import { Image } from 'semantic-ui-react';
+import Katie from '../images/placeholder.jpg';
 
 const About = () => (
 	<section className="about">

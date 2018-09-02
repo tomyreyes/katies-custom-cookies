@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar';
 
-class Cookie extends Component {
+class Cookies extends Component {
 	constructor() {
 		super()
 	}
@@ -10,9 +10,10 @@ class Cookie extends Component {
 		return (
 			<div>
 				<NavBar />
+				<h1>Cookies</h1>
 			</div>
 		)
 	}
 }
 
-export default Cookie
+export default Cookies;

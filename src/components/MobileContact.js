@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Button, Form, Modal } from 'semantic-ui-react'
-
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Button, Form, Modal } from 'semantic-ui-react';
 export default class MobileContact extends Component {
 	constructor() {
 		super()

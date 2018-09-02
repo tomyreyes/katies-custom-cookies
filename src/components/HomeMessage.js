@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Container } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
 
 export default class HomeMessage extends Component {
 	render() {

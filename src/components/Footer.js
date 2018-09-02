@@ -1,23 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Menu, Icon, Responsive } from 'semantic-ui-react'
-import Contact from './Contact'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Menu, Icon, Responsive } from 'semantic-ui-react';
+import Contact from './Contact';
+import { NavLink } from 'react-router-dom';
 
 export default class Footer extends Component {
-
 	renderDesktopFooter = () => {
-		const { activeItem, handleItemClick } = this.props
 		return (
 			<Menu pointing secondary className="footer-nav">
 				<Menu.Item
+					as={NavLink}
+					to='/'
 					name='home'
-					active={activeItem === 'home'}
-					onClick={handleItemClick}
 				/>
 				<Menu.Item
+					as={NavLink}
+					to='/cookies'
 					name='cookies'
-					active={activeItem === 'cookies'}
-					onClick={handleItemClick}
 				/>
 				<Contact />
 			</Menu>
@@ -25,30 +24,26 @@ export default class Footer extends Component {
 	}
 
 	renderMobileFooter = () => {
-		const { activeItem, handleItemClick } = this.props
 		return (
 			<Menu icon='labeled' secondary className="footer-nav mobile-nav">
 				<Menu.Item
+					as={NavLink}
+					to='/'
 					name='home'
-					active={activeItem === 'home'}
-					// position={"right"}
-					onClick={handleItemClick}
 				>
 					<Icon name="home" />
 					Home
 				</Menu.Item>
 				<Menu.Item
+					as={NavLink}
+					to='/cookies'
 					name='cookies'
-					active={activeItem === 'cookies'}
-					onClick={handleItemClick}
 				>
 					<Icon name="cookie" />
 					Gallery
 				</Menu.Item>
 				<Menu.Item
 					name='Contact'
-					active={activeItem === 'Contact'}
-					onClick={handleItemClick}
 				>
 					<Icon name="mail" />
 					Contact
@@ -71,7 +66,5 @@ export default class Footer extends Component {
 }
 
 Footer.propTypes = {
-	activeItem: PropTypes.string.isRequired,
-	handleItemClick: PropTypes.func.isRequired,
 	openModal: PropTypes.bool.isRequired
 }

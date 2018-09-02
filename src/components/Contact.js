@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Button, Form, Menu, Modal } from 'semantic-ui-react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import { Button, Form, Menu, Modal } from 'semantic-ui-react';
+import axios from 'axios';
 export default class Contact extends Component {
 	constructor() {
 		super()
