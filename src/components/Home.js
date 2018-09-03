@@ -22,7 +22,6 @@ class Home extends Component {
 			});
 		});
 	}
-	// If a child receives focus, do not close the popover.
 	onFocusHandler = () => {
 		clearTimeout(this.timeOutId);
 	}

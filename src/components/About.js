@@ -16,7 +16,6 @@ const About = () => (
 			</p>
 		</div>
 	</section>
-
 )
 
 export default About

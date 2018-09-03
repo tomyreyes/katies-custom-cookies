@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import NavBar from './NavBar';
+import Footer from './Footer';
 
-class Cookies extends Component {
+
+export default class Cookies extends Component {
 	constructor() {
 		super()
 	}
@@ -11,9 +13,8 @@ class Cookies extends Component {
 			<div>
 				<NavBar />
 				<h1>Cookies</h1>
+				<Footer />
 			</div>
 		)
 	}
 }
-
-export default Cookies;

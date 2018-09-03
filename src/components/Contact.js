@@ -12,7 +12,7 @@ export default class Contact extends Component {
 			nameError: false,
 			emailError: false,
 			messageError: false,
-			disableSubmit: true,
+			formSuccess: null
 		}
 	}
 
@@ -20,74 +20,64 @@ export default class Contact extends Component {
 		const { name, value } = e.target
 		this.setState({ [name]: value })
 	}
+
 	handleSubmit = () => {
-		const { fullName, email, phone, message } = this.state
-		axios.post('http://localhost:8080/send', {
-			fullName, email, phone, message
-		})
-	}
-	checkError = (e) => {
-		const { fullName, email, message } = this.state
-		const { name } = e.target
+		const { fullName, email, message, } = this.state
 		let emailValidation = email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
 		let error = false
-		if (name === 'fullName') {
-			if (fullName === '') {
-				this.setState({ nameError: true })
-				error = true
-			} else {
-				this.setState({ nameError: false })
-			}
+		if (fullName === '') {
+			this.setState({ nameError: true })
+			error = true
+		} else {
+			this.setState({ nameError: false })
 		}
-		if (name === 'email') {
-			if (email === '' || emailValidation === null) {
-				this.setState({ emailError: true })
-				error = true
-			} else {
-				this.setState({ emailError: false })
-			}
+		if (email === '' || emailValidation === null) {
+			this.setState({ emailError: true })
+			error = true
+		} else {
+			this.setState({ emailError: false })
 		}
-		if (name === 'message') {
-			if (message === '') {
-				this.setState({ messageError: true })
-				error = true
-			} else {
-				this.setState({ messageError: false })
-			}
+		if (message === '') {
+			this.setState({ messageError: true })
+			error = true
+		} else {
+			this.setState({ messageError: false })
 		}
 		if (error) {
-			this.setState({ disableSubmit: true })
+			console.log('ERROR')
+			this.setState({ formSuccess: false })
 		} else {
-			this.setState({ disableSubmit: false })
+			console.log('GOOD')
+			this.setState({ formSuccess: true })
 		}
+		// axios.post('http://localhost:8080/send', {
+		// 	fullName, email, phone, message
+		// })
 	}
-
 	render() {
-		const { fullName, email, phone, message, nameError, emailError, messageError, disableSubmit } = this.state
+		const { fullName, email, phone, message, nameError, emailError, messageError, formSuccess } = this.state
 		return (
 			<Modal trigger={< Menu.Item name='contact' />} >
 				<Modal.Header>Contact Me</Modal.Header>
 				<Modal.Content>
 					<Form>
 						<Form.Field error={nameError}>
-							<label>Full Name</label>
-							<input value={fullName} name="fullName" onBlur={(e) => this.checkError(e)} onChange={(e) => this.handleUserInput(e)} />
+							<label>Full Name *</label> {nameError ? <span>Please Include Your Name</span> : null}
+							<input value={fullName} name="fullName" onChange={(e) => this.handleUserInput(e)} />
 						</Form.Field>
 						<Form.Field error={emailError}>
-							<label>Email</label>
-							<input value={email} name="email" onBlur={(e) => this.checkError(e)} onChange={(e) => this.handleUserInput(e)} />
+							<label>Email *</label> {emailError ? <span>Please Include Your Email</span> : null}
+							<input value={email} name="email" onChange={(e) => this.handleUserInput(e)} />
 						</Form.Field>
 						<Form.Field>
 							<label>Phone Number</label>
 							<input value={phone} name="phone" onChange={(e) => this.handleUserInput(e)} />
 						</Form.Field>
 						<Form.Field error={messageError}>
-							<label>Message</label>
-							<textarea value={message} name="message" onBlur={(e) => this.checkError(e)} onChange={(e) => this.handleUserInput(e)} />
+							<label>Message *</label> {messageError ? <span>Please Include A Message</span> : null}
+							<textarea value={message} name="message" onChange={(e) => this.handleUserInput(e)} />
 						</Form.Field>
-						<Button color='blue' disabled={disableSubmit} onClick={this.handleSubmit}>Submit</Button>
-						{/* {formSuccess === true && <span>Message Sent - Thank You</span>}
-						{formSuccess === false && <span> Please Double Check Your Information</span>} */}
+						<Button color='blue' onClick={this.handleSubmit}>Submit</Button>
 					</Form>
 				</Modal.Content>
 			</Modal >
