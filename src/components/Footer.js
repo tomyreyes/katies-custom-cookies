@@ -42,6 +42,8 @@ export default class Footer extends Component {
 					Cookies
 				</Menu.Item>
 				<Menu.Item
+					as={NavLink}
+					to="/contact"
 					name='Contact'
 				>
 					<Icon name="mail" />

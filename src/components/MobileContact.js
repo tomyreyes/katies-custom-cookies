@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Form, Modal } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
+import NavBar from './NavBar';
+import Footer from './Footer';
+
 export default class MobileContact extends Component {
 	constructor() {
 		super()
@@ -52,35 +54,30 @@ export default class MobileContact extends Component {
 	render() {
 		const { name, email, phone, message, nameError, emailError, messageError, formSuccess } = this.state
 		return (
-			<Modal open={this.props.openModal}>
-				<Modal.Header>Contact Me</Modal.Header>
-				<Modal.Content>
-					<Form>
-						<Form.Field error={nameError}>
-							<label>Full Name</label>
-							<input value={name} name="name" onChange={(e) => this.handleUserInput(e)} />
-						</Form.Field>
-						<Form.Field error={emailError}>
-							<label>Email</label>
-							<input value={email} name="email" onChange={(e) => this.handleUserInput(e)} />
-						</Form.Field>
-						<Form.Field>
-							<label>Phone Number</label>
-							<input value={phone} name="phone" onChange={(e) => this.handleUserInput(e)} />
-						</Form.Field>
-						<Form.Field error={messageError}>
-							<label>Message</label>
-							<textarea value={message} name="message" onChange={(e) => this.handleUserInput(e)} />
-						</Form.Field>
-						<Button color='blue' onClick={this.sendMessage}>Submit</Button>{formSuccess === true ? <span> Message Sent - Thank You</span> : ''}
-						{formSuccess === false ? <span> Please Double Check YourInformation</span> : ''}
-					</Form>
-				</Modal.Content>
-			</Modal>
+			<div>
+				<NavBar />
+				<Form>
+					<Form.Field error={nameError}>
+						<label>Full Name</label>
+						<input value={name} name="name" onChange={(e) => this.handleUserInput(e)} />
+					</Form.Field>
+					<Form.Field error={emailError}>
+						<label>Email</label>
+						<input value={email} name="email" onChange={(e) => this.handleUserInput(e)} />
+					</Form.Field>
+					<Form.Field>
+						<label>Phone Number</label>
+						<input value={phone} name="phone" onChange={(e) => this.handleUserInput(e)} />
+					</Form.Field>
+					<Form.Field error={messageError}>
+						<label>Message</label>
+						<textarea value={message} name="message" onChange={(e) => this.handleUserInput(e)} />
+					</Form.Field>
+					<Button color='blue' onClick={this.sendMessage}>Submit</Button>{formSuccess === true ? <span> Message Sent - Thank You</span> : ''}
+					{formSuccess === false ? <span> Please Double Check YourInformation</span> : ''}
+				</Form>
+				<Footer />
+			</div>
 		)
 	}
-}
-
-MobileContact.propTypes = {
-	openModal: PropTypes.bool.isRequired
 }

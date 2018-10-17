@@ -74,13 +74,13 @@ export default class Contact extends Component {
 					<Modal.Content>
 						<Form>
 							<Form.Field error={nameError}>
-								<label>Full Name </label><span class="required"> *</span>
-								{nameError ? <div class="required">Please Include Your Name</div> : null}
+								<label>Full Name </label><span className="required"> *</span>
+								{nameError ? <div className="required">Please Include Your Name</div> : null}
 								<input value={fullName} name="fullName" onChange={(e) => this.handleUserInput(e)} />
 							</Form.Field>
 							<Form.Field error={emailError}>
-								<label>Email </label> <span class="required"> *</span>{
-									emailError ? <div class="required">Please Include Your Email</div> : null}
+								<label>Email </label> <span className="required"> *</span>{
+									emailError ? <div className="required">Please Include Your Email</div> : null}
 								<input value={email} name="email" onChange={(e) => this.handleUserInput(e)} />
 							</Form.Field>
 							<Form.Field>
@@ -88,14 +88,14 @@ export default class Contact extends Component {
 								<input value={phone} name="phone" onChange={(e) => this.handleUserInput(e)} />
 							</Form.Field>
 							<Form.Field error={messageError}>
-								<label>Message </label><span class="required"> *</span>
-								{messageError ? <div class="required">Please Include A Message</div> : null}
+								<label>Message </label><span className="required"> *</span>
+								{messageError ? <div className="required">Please Include A Message</div> : null}
 								<textarea value={message} name="message" onChange={(e) => this.handleUserInput(e)} />
 							</Form.Field>
 							<Button color='blue' onClick={this.handleSubmit}>Submit</Button>
 						</Form>
 					</Modal.Content>
-					: <div class="form-success"><h2>Message Sent</h2>
+					: <div className="form-success"><h2>Message Sent</h2>
 						<h3>I will get back to you by email as soon as I can! :)</h3>
 						<Button onClick={this.createNew}>New Message?</Button>
 					</div>

@@ -5,7 +5,6 @@ import HomeHeader from './HomeHeader';
 import HomeMessage from './HomeMessage';
 import About from './About';
 import Footer from './Footer';
-import MobileContact from './MobileContact';
 
 class Home extends Component {
 	constructor() {
@@ -40,7 +39,6 @@ class Home extends Component {
 				</div>
 				<HomeMessage />
 				<About />
-				<MobileContact openModal={openModal} />
 				<Footer openModal={openModal} />
 			</div>
 		);
