@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Menu, Icon, Responsive } from 'semantic-ui-react';
 import Contact from './Contact';
 import { NavLink } from 'react-router-dom';
@@ -39,8 +38,8 @@ export default class Footer extends Component {
 					to='/cookies'
 					name='cookies'
 				>
-					<Icon name="cookie" />
-					Gallery
+					<Icon name="camera" />
+					Cookies
 				</Menu.Item>
 				<Menu.Item
 					name='Contact'
@@ -65,6 +64,4 @@ export default class Footer extends Component {
 	}
 }
 
-Footer.propTypes = {
-	openModal: PropTypes.bool.isRequired
-}
+
