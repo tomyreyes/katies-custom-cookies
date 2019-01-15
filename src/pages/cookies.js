@@ -2,9 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import CookieBanner from '../components/CookieBanner'
-import specialevent from '../assets/images/specialevent.jpg'
-import holidays from '../assets/images/holidays.jpg'
-import justbecause from '../assets/images/justbecause.jpg'
+import pic07 from '../assets/images/pic07.jpg'
+import pic08 from '../assets/images/pic08.jpg'
+import pic09 from '../assets/images/pic09.jpg'
 
 const Cookies = props => (
   <Layout>
@@ -17,7 +17,7 @@ const Cookies = props => (
       <section id="two" className="spotlights">
         <section>
           <a href="https://www.instagram.com/p/BamlZC2lX-J/" className="image">
-            <img src={specialevent} alt="" />
+            <img src={pic07} alt="special-event" />
           </a>
           <div className="content">
             <div className="inner">
@@ -33,7 +33,7 @@ const Cookies = props => (
         </section>
         <section>
           <a href="https://www.instagram.com/p/BrwLmYDgRNb/" className="image">
-            <img src={holidays} alt="" />
+            <img src={pic08} alt="Holiday Picture" />
           </a>
           <div className="content">
             <div className="inner">
@@ -49,7 +49,7 @@ const Cookies = props => (
         </section>
         <section>
           <a href="https://www.instagram.com/p/BmpPikShVoo/" className="image">
-            <img src={justbecause} alt="" />
+            <img src={pic09} alt="Cookie" />
           </a>
           <div className="content">
             <div className="inner">
