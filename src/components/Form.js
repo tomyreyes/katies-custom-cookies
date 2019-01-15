@@ -31,6 +31,7 @@ class Form extends Component {
       message: '',
       validation: this.validator.valid(),
       errorMessage: null,
+      sendToNetlify: false,
     }
 
     this.submitted = false
@@ -75,7 +76,6 @@ class Form extends Component {
   //   }
 
   render() {
-    const { errorMessage } = this.state
     let validation = this.submitted
       ? this.validator.validate(this.state)
       : this.state.validation
@@ -83,7 +83,18 @@ class Form extends Component {
       <section id="contact">
         <div className="inner">
           <section>
-            <form method="post" action="#">
+            <form
+              name="contact"
+              method="POST"
+              action="#"
+              netlify-honeypot="bot-field"
+            >
+              <p class="hidden">
+                <label>
+                  Don’t fill this out if you're human:{' '}
+                  <input name="bot-field" />
+                </label>
+              </p>
               <div className="field half first">
                 <label htmlFor="name">
                   Name <span className="required-field">*</span>

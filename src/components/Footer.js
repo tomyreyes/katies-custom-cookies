@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const Footer = props => (
   <footer id="footer">
@@ -8,7 +9,19 @@ const Footer = props => (
           <a href="#" className="icon alt fa-instagram">
             <span className="label">Instagram</span>
           </a>
-          <span className="copyright"> Katies Custom Cookies</span>
+        </li>
+        <li>
+          <Link to="/">Katie's Custom Cookies</Link>
+        </li>
+        <li>
+          <Link to="/cookies" className="logo">
+            Cookies
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className="logo">
+            Contact Me
+          </Link>
         </li>
       </ul>
     </div>
