@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerLanding from '../components/BannerLanding'
-import pic08 from '../assets/images/pic08.jpg'
-import pic09 from '../assets/images/pic09.jpg'
-import pic10 from '../assets/images/pic10.jpg'
+import specialevent from '../assets/images/specialevent.jpg'
+import holidays from '../assets/images/holidays.jpg'
+import justbecause from '../assets/images/justbecause.jpg'
 
 const Cookies = props => (
   <Layout>
@@ -15,6 +14,67 @@ const Cookies = props => (
     </Helmet>
     <BannerLanding />
     <div id="main">
+      <section id="two" className="spotlights">
+        <section>
+          <a href="https://www.instagram.com/p/BamlZC2lX-J/" className="image">
+            <img src={specialevent} alt="" />
+          </a>
+          <div className="content">
+            <div className="inner">
+              <header className="major">
+                <h3>Special Events</h3>
+              </header>
+              <p>
+                I create cookies for special events including weddings, baby
+                showers and anniversaries.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <a href="https://www.instagram.com/p/BrwLmYDgRNb/" className="image">
+            <img src={holidays} alt="" />
+          </a>
+          <div className="content">
+            <div className="inner">
+              <header className="major">
+                <h3>Holidays</h3>
+              </header>
+              <p>
+                Whether you enjoy snow men or scary creatures on your cookies, I
+                have got you covered. Order some cookies for the holiday season!
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <a href="https://www.instagram.com/p/BmpPikShVoo/" className="image">
+            <img src={justbecause} alt="" />
+          </a>
+          <div className="content">
+            <div className="inner">
+              <header className="major">
+                <h3>Just Because</h3>
+              </header>
+              <p>
+                Let's be honest. You don't need a special reason to have
+                cookies. View the latest cookies I have designed on my
+                Instagram.
+              </p>
+              <ul className="actions">
+                <li>
+                  <a
+                    className="button"
+                    href="https://www.instagram.com/katiescustomcookies/"
+                  >
+                    View Instagram
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
       <section id="one">
         <div className="inner">
           <header className="major">
@@ -78,87 +138,6 @@ const Cookies = props => (
             <div />
           </div>
         </div>
-      </section>
-
-      <section id="two" className="spotlights">
-        <section>
-          <Link to="/generic" className="image">
-            <img src={pic08} alt="" />
-          </Link>
-          <div className="content">
-            <div className="inner">
-              <header className="major">
-                <h3>Orci maecenas</h3>
-              </header>
-              <p>
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate
-                urna. Maecenas massa sed magna lacinia magna pellentesque lorem
-                ipsum dolor. Nullam et orci eu lorem consequat tincidunt.
-                Vivamus et sagittis tempus.
-              </p>
-              <ul className="actions">
-                <li>
-                  <Link to="/generic" className="button">
-                    Learn more
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section>
-          <Link to="/generic" className="image">
-            <img src={pic09} alt="" />
-          </Link>
-          <div className="content">
-            <div className="inner">
-              <header className="major">
-                <h3>Rhoncus magna</h3>
-              </header>
-              <p>
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate
-                urna. Maecenas massa sed magna lacinia magna pellentesque lorem
-                ipsum dolor. Nullam et orci eu lorem consequat tincidunt.
-                Vivamus et sagittis tempus.
-              </p>
-              <ul className="actions">
-                <li>
-                  <Link to="/generic" className="button">
-                    Learn more
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section>
-          <Link to="/generic" className="image">
-            <img src={pic10} alt="" />
-          </Link>
-          <div className="content">
-            <div className="inner">
-              <header className="major">
-                <h3>Sed nunc ligula</h3>
-              </header>
-              <p>
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate
-                urna. Maecenas massa sed magna lacinia magna pellentesque lorem
-                ipsum dolor. Nullam et orci eu lorem consequat tincidunt.
-                Vivamus et sagittis tempus.
-              </p>
-              <ul className="actions">
-                <li>
-                  <Link to="/generic" className="button">
-                    Learn more
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
       </section>
     </div>
   </Layout>

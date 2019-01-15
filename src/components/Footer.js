@@ -8,7 +8,7 @@ const Footer = props => (
           <a href="#" className="icon alt fa-instagram">
             <span className="label">Instagram</span>
           </a>
-          <span> Katies Custom Cookies</span>
+          <span className="copyright"> Katies Custom Cookies</span>
         </li>
       </ul>
     </div>
