@@ -9,7 +9,7 @@ import specialevent from '../assets/images/specialevent.jpg'
 const Cookies = props => (
   <Layout>
     <Helmet>
-      <title>Cookies</title>
+      <title>Coookies</title>
       <meta name="description" content="pictures and prices" />
     </Helmet>
     <CookieBanner />
