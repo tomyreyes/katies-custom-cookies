@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import BannerLanding from '../components/BannerLanding'
+import CookieBanner from '../components/CookieBanner'
 import specialevent from '../assets/images/specialevent.jpg'
 import holidays from '../assets/images/holidays.jpg'
 import justbecause from '../assets/images/justbecause.jpg'
@@ -12,7 +12,7 @@ const Cookies = props => (
       <title>Cookies</title>
       <meta name="description" content="pictures and prices" />
     </Helmet>
-    <BannerLanding />
+    <CookieBanner />
     <div id="main">
       <section id="two" className="spotlights">
         <section>
