@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import CookieBanner from '../components/CookieBanner'
 import pic07 from '../assets/images/pic07.jpg'
 import pic08 from '../assets/images/pic08.jpg'
