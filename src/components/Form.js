@@ -32,6 +32,7 @@ class Form extends Component {
       message: '',
       validation: this.validator.valid(),
       errorMessage: null,
+      messageSuccess: false,
     }
 
     this.submitted = false
@@ -51,7 +52,7 @@ class Form extends Component {
   }
   handleFormSubmit = event => {
     event.preventDefault()
-    const { name, email, message } = this.state
+    const { name, email, message, messageSuccess } = this.state
     const validation = this.validator.validate(this.state)
     this.setState({ validation })
     this.submitted = true
@@ -61,7 +62,14 @@ class Form extends Component {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: this.encode({ 'form-name': 'contact', name, email, message }),
       })
-        .then(() => alert('Success!'))
+        .then(() => {
+          this.setState({
+            messageSuccess: true,
+            name: '',
+            email: '',
+            message: '',
+          })
+        })
         .catch(error => alert(error))
 
       event.preventDefault()
@@ -72,6 +80,8 @@ class Form extends Component {
     let validation = this.submitted
       ? this.validator.validate(this.state)
       : this.state.validation
+
+    const { messageSuccess } = this.state
     return (
       <section id="contact">
         <div className="inner">
@@ -132,6 +142,11 @@ class Form extends Component {
                 </li>
               </ul>
             </form>
+            {messageSuccess && (
+              <h4 className="success-message">
+                Message Received - I will get back to you as soon as I can!
+              </h4>
+            )}
           </section>
           <section className="split">
             <section>
