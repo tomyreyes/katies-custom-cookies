@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FormValidator from './utils/FormValidator'
+import fetch from 'node-fetch'
 
 class Form extends Component {
   constructor() {
@@ -31,7 +32,6 @@ class Form extends Component {
       message: '',
       validation: this.validator.valid(),
       errorMessage: null,
-      sendToNetlify: false,
     }
 
     this.submitted = false
@@ -45,35 +45,27 @@ class Form extends Component {
     })
   }
 
+  encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&')
+  }
   handleFormSubmit = event => {
     event.preventDefault()
-    console.log(event)
-    const { email, password } = this.state
+    const { name, email, message } = this.state
     const validation = this.validator.validate(this.state)
     this.setState({ validation })
     this.submitted = true
-    // if (validation.isValid) {
-    //   axios
-    //     .post('http://localhost:5000/login', {
-    //       email,
-    //       password,
-    //     })
-    //     .then(response => {
-    //       if (response.data.status === 200) {
-    //         localStorage.setItem('jwt', response.data.token)
-    //         this.setState({ user: response.data.email })
-    //         return this.props.history.push('/')
-    //       } else if (response.data.status === 400) {
-    //         return this.setState({
-    //           errorMessage: response.data.message,
-    //         })
-    //       } else return alert('Server Error')
-    //     })
-    //     .catch(error => {
-    //       return alert(error)
-    //     })
+    if (validation.isValid) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({ 'form-name': 'contact', name, email, message }),
+      })
+        .then(() => alert('Success!'))
+        .catch(error => alert(error))
+    }
   }
-  //   }
 
   render() {
     let validation = this.submitted
@@ -83,18 +75,8 @@ class Form extends Component {
       <section id="contact">
         <div className="inner">
           <section>
-            <form
-              name="contact"
-              method="POST"
-              action="#"
-              netlify-honeypot="bot-field"
-            >
-              <p class="hidden">
-                <label>
-                  Don’t fill this out if you're human:{' '}
-                  <input name="bot-field" />
-                </label>
-              </p>
+            <form onSubmit={this.handleSubmit}>
+              <input type="hidden" name="form-name" value="contact" />
               <div className="field half first">
                 <label htmlFor="name">
                   Name <span className="required-field">*</span>
@@ -134,12 +116,9 @@ class Form extends Component {
               </div>
               <ul className="actions">
                 <li>
-                  <input
-                    type="submit"
-                    value="Send Message"
-                    className="special"
-                    onClick={this.handleFormSubmit}
-                  />
+                  <button type="submit" className="special">
+                    Send Message
+                  </button>
                 </li>
                 <li>
                   <input type="reset" value="Clear" />
