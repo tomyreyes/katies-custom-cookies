@@ -14,8 +14,8 @@ const Banner = props => (
         </p>
         <ul className="actions">
           <li>
-            <a href="#one" className="button next scrolly">
-              View Gallery
+            <a href="/cookies" className="button next scrolly">
+              Learn More
             </a>
           </li>
         </ul>
