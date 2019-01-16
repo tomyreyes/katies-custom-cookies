@@ -64,6 +64,8 @@ class Form extends Component {
       })
         .then(() => alert('Success!'))
         .catch(error => alert(error))
+
+      event.preventDefault()
     }
   }
 
