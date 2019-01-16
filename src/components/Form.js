@@ -77,7 +77,7 @@ class Form extends Component {
       <section id="contact">
         <div className="inner">
           <section>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleFormSubmit}>
               <input type="hidden" name="form-name" value="contact" />
               <div className="field half first">
                 <label htmlFor="name">
