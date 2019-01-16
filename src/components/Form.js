@@ -39,7 +39,6 @@ class Form extends Component {
 
   handleInputChange = event => {
     event.preventDefault()
-    console.log(event.target.value)
     this.setState({
       [event.target.name]: event.target.value,
     })
@@ -51,6 +50,7 @@ class Form extends Component {
       .join('&')
   }
   handleFormSubmit = event => {
+    console.log('hi')
     event.preventDefault()
     const { name, email, message } = this.state
     const validation = this.validator.validate(this.state)
