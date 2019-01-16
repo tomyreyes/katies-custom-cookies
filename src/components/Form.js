@@ -76,7 +76,13 @@ class Form extends Component {
       <section id="contact">
         <div className="inner">
           <section>
-            <form onSubmit={this.handleFormSubmit}>
+            <form
+              name="contact"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={this.handleFormSubmit}
+            >
               <input type="hidden" name="form-name" value="contact" />
               <div className="field half first">
                 <label htmlFor="name">
