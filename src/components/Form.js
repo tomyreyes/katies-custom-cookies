@@ -50,7 +50,6 @@ class Form extends Component {
       .join('&')
   }
   handleFormSubmit = event => {
-    console.log('hi')
     event.preventDefault()
     const { name, email, message } = this.state
     const validation = this.validator.validate(this.state)
@@ -75,6 +74,10 @@ class Form extends Component {
       : this.state.validation
     return (
       <section id="contact">
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name" /> <input type="email" name="email" />
+          <textarea name="message" />
+        </form>
         <div className="inner">
           <section>
             <form onSubmit={this.handleFormSubmit}>
