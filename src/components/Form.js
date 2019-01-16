@@ -163,8 +163,8 @@ class Form extends Component {
               <div className="contact-method">
                 <span className="icon alt fa-envelope" />
                 <h3>Email</h3>
-                <a href="mailto:katiescustomcookies@gmail.com?Subject=Cookie%20Order">
-                  katiescustomcookies@gmail.com
+                <a href="mailto:kdscustomcookies@gmail.com?Subject=Cookie%20Order">
+                  kdscustomcookies@gmail.com
                 </a>
               </div>
             </section>

@@ -49,7 +49,7 @@ class HomeIndex extends React.Component {
                 <h3>Contact Me</h3>
                 <p>Make an order today!</p>
               </header>
-              <Link to="/landing" className="link primary" />
+              <Link to="/contact" className="link primary" />
             </article>
           </section>
         </div>

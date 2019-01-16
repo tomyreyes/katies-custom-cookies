@@ -18,7 +18,7 @@ const Menu = props => (
         </li>
         <li>
           <Link onClick={props.onToggleMenu} to="/contact">
-            Contact
+            Contact Me
           </Link>
         </li>
       </ul>
