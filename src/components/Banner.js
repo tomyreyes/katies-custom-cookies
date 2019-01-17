@@ -1,7 +1,13 @@
 import React from 'react'
+import Img from 'gatsby-image'
 
 const Banner = props => (
   <section id="banner" className="major">
+    <Img
+      css={{ top: 0, left: 0, right: 0, bottom: 0 }}
+      style={{ position: `absolute` }}
+      fluid={props.imagesrc}
+    />
     <div className="inner">
       <header className="major">
         <h1>Do you need cookies?</h1>

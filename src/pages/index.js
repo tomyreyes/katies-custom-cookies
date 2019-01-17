@@ -19,7 +19,7 @@ class HomeIndex extends React.Component {
           ]}
         />
 
-        <Banner />
+        <Banner imagesrc={this.props.data.imageOne.childImageSharp.fluid} />
 
         <div id="main">
           <section id="about-me">
@@ -59,3 +59,21 @@ class HomeIndex extends React.Component {
 }
 
 export default HomeIndex
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "banner.jpg" }) {
+      ...fluidImage
+    }
+  }
+`

@@ -11,7 +11,7 @@ const Footer = props => (
           </a>
         </li>
         <li>
-          <Link to="/">Katie's Custom Cookies</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/cookies" className="logo">
