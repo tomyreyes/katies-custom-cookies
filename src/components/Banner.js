@@ -4,7 +4,13 @@ import Img from 'gatsby-image'
 const Banner = props => (
   <section id="banner" className="major">
     <Img
-      css={{ top: 0, left: 0, right: 0, bottom: 0 }}
+      css={{
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundAttachment: 'fixed',
+      }}
       style={{ position: `absolute` }}
       fluid={props.imagesrc}
     />

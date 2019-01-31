@@ -11,15 +11,17 @@ const Footer = props => (
           </a>
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" aria-label="Home">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/cookies" className="logo">
+          <Link to="/cookies" className="logo" aria-label="Cookies">
             Cookies
           </Link>
         </li>
         <li>
-          <Link to="/contact" className="logo">
+          <Link to="/contact" className="logo" aria-label="Contact">
             Contact Me
           </Link>
         </li>

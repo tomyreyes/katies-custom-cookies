@@ -5,11 +5,16 @@ import logo from '../assets/images/katieslogo.png'
 
 const Header = props => (
   <header id="header" className="alt">
-    <Link to="/" className="logo">
-      <img src={logo} />
+    <Link to="/" className="logo" aria-label="Home">
+      <img src={logo} alt="Katie's Custom Cookies logo" />
     </Link>
     <nav>
-      <a className="menu-link" onClick={props.onToggleMenu} href="javascript:;">
+      <a
+        aria-label="menu"
+        className="menu-link"
+        onClick={props.onToggleMenu}
+        href="javascript:;"
+      >
         Menu
       </a>
     </nav>
