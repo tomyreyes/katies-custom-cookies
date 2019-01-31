@@ -17,7 +17,9 @@ class HomeIndex extends React.Component {
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
           ]}
-        />
+        >
+          <html lang="en" />
+        </Helmet>
 
         <Banner imagesrc={this.props.data.imageOne.childImageSharp.fluid} />
 
