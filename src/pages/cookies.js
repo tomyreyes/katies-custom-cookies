@@ -33,7 +33,7 @@ const Cookies = props => (
         </section>
         <section>
           <a href="https://www.instagram.com/p/BrwLmYDgRNb/" className="image">
-            <img src={holidays} alt="Holiday Picture" />
+            <img src={holidays} alt="Holiday" />
           </a>
           <div className="content">
             <div className="inner">

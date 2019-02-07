@@ -6,7 +6,10 @@ const Footer = props => (
     <div className="inner">
       <ul className="icons">
         <li>
-          <a href="#" className="icon alt fa-instagram">
+          <a
+            href="https://www.instagram.com/katiescustomcookies/"
+            className="icon alt fa-instagram"
+          >
             <span className="label">Instagram</span>
           </a>
         </li>

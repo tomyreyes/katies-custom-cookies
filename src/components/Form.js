@@ -52,7 +52,7 @@ class Form extends Component {
   }
   handleFormSubmit = event => {
     event.preventDefault()
-    const { name, email, message, messageSuccess } = this.state
+    const { name, email, message } = this.state
     const validation = this.validator.validate(this.state)
     this.setState({ validation })
     this.submitted = true

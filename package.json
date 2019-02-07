@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-forty-v2",
-  "description": "Gatsby Starter - Forty V2",
+  "name": "Katies Custom Cookies",
+  "description": "code for website",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Tomy Reyes",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.76",
